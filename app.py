@@ -18,6 +18,34 @@ def predict_car_price(user_input):
     
     return prediction[0]
 
+# Set the page icon and title
+st.set_page_config(page_title="Car Price Prediction", page_icon="🚗")  # You can use an emoji like 🚗 or upload your own icon.
+
+# Custom CSS for background image and blur effect
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-image: url('https://your-image-url.com/car-background.jpg'); /* Replace with the URL of your image */
+        background-size: cover;
+        background-position: center;
+        filter: blur(8px);  /* Blurring the background */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    .block-container {
+        background: rgba(255, 255, 255, 0.8);  /* Transparent white background for the form content */
+        border-radius: 10px;
+        padding: 20px;
+    }
+    </style>
+    """, unsafe_allow_html=True
+)
+
 # Create a Streamlit app
 st.title("Car Price Prediction")
 
@@ -32,7 +60,7 @@ year = st.number_input('Year of the car:', min_value=1990, max_value=2024, step=
 # km_driven
 km_driven = st.number_input('Kilometers driven by the car:', min_value=0, step=500)
 
- # Dropdown menus for categorical features
+# Dropdown menus for categorical features
 fuel = st.selectbox('Select Fuel Type:', ('Diesel', 'Petrol', 'CNG', 'LPG'))
 fuel = {'Diesel': 0, 'Petrol': 1, 'CNG': 2, 'LPG': 3}[fuel]
 
@@ -44,7 +72,6 @@ transmission = {'Manual': 0, 'Automatic': 1}[transmission]
 
 owner = st.selectbox('Select Owner Type:', ('First Owner', 'Second Owner', 'Third Owner', 'Fourth & Above Owner', 'Test Drive Car'))
 owner = {'First Owner': 0, 'Second Owner': 1, 'Third Owner': 2, 'Fourth & Above Owner': 3, 'Test Drive Car': 4}[owner]
-
 
 # mileage
 mileage = st.number_input('Mileage (in Kmpl):', min_value=0.0, max_value=50.0, step=0.1)
