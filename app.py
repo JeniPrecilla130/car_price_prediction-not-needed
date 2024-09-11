@@ -26,7 +26,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: url('https://your-image-url.com/car-background.jpg'); /* Replace with the URL of your image */
+        background-image: url('https://th.bing.com/th/id/OIP.qUTpyFjNX1V-7AbIllH8WQAAAA?rs=1&pid=ImgDetMain'); /* Replace with the URL of your image */
         background-size: cover;
         background-position: center;
         filter: blur(8px);  /* Blurring the background */
